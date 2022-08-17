@@ -1,5 +1,6 @@
 {
   "files.associations": {
     "time.h": "c"
-  }
+  },
+  "rust-analyzer.linkedProjects": ["rust/hello_world/Cargo.toml"]
 }
