@@ -9,7 +9,10 @@ with open(sys.argv[1]) as file:
     word = word.lower()
     words[word] = words.setdefault(word, 0) + 1
 
-top_words = list(islice(words.items(), 10))
+top_length = 10
+if len(sys.argv) == 3:
+  top_length = int(sys.argv[2])
+top_words = list(islice(words.items(), top_length))
 for word, n in words.items():
   for i, top in enumerate(top_words):
     if n > top[1]:

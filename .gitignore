@@ -1,6 +1,7 @@
 *.exe
 *.pdb
 *.log
+*.csv
 
 node_modules/
 target/
