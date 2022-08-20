@@ -33,20 +33,17 @@ fn main() {
         None => {
             println!("Enter file name: ");
             let mut buf = String::new();
-            if let Err(e) = stdin().read_line(&mut buf) {
-                panic!("invalid input, {}", e);
-            }
+            stdin().read_line(&mut buf).expect("Invalid Input");
             buf
         }
     };
 
     // read file and count words
     let re = Regex::new(r#"("|\.|,|\?|!|:|;|_|\(|\))"#).unwrap();
-    let file = fs::read_to_string(file_path.trim()).expect("Unable to read file");
+    let file = fs::read_to_string(file_path).expect("Unable to read file");
+    let file = re.replace_all(file.as_str(), "").into_owned();
     for word in file.split_whitespace() {
-        let word = re.replace_all(word, "").into_owned();
-        let ent = words.entry(word.to_lowercase()).or_insert(0);
-        *ent += 1;
+        *words.entry(word.to_lowercase()).or_insert(0) += 1;
     }
     // println!("{:?}", words);
 
@@ -72,14 +69,6 @@ fn main() {
     }
 
     // print results
-    if verbose {
-        println!("Rank\tWord           Occurrences");
-        for (i, top) in top_words.iter().enumerate() {
-            println!("{}\t{:15}{:>11}", i+1, top.0, top.1);
-        }
-        println!("\n{:?}", start.elapsed());
-    }
-
     if let Some(path) = out_file {
         let mut buf = String::new();
         buf.push_str("Rank,Word,Occurrences\n");
@@ -87,5 +76,13 @@ fn main() {
             buf.push_str(format!("{},{},{}\n", i+1, top.0, top.1).as_str());
         }
         fs::write(path, buf).expect("Unable to write file");
+    }
+    
+    if verbose {
+        println!("Rank\tWord           Occurrences");
+        for (i, top) in top_words.iter().enumerate() {
+            println!("{}\t{:15}{:>11}", i+1, top.0, top.1);
+        }
+        println!("\n{:?}", start.elapsed());
     }
 }
