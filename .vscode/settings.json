@@ -2,5 +2,8 @@
   "files.associations": {
     "time.h": "c"
   },
-  "rust-analyzer.linkedProjects": ["rust/word_counter/Cargo.toml"]
+  "rust-analyzer.linkedProjects": [
+    "rust/word_counter/Cargo.toml",
+    "rust/adv_tut/Cargo.toml",
+  ],
 }
