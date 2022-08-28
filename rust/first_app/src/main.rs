@@ -27,14 +27,14 @@ async fn count(queue: &State<Sender<&'static str>>, mut end: Shutdown) -> TextSt
 
 #[get("/add/<num>")]
 fn add(num: u32, queue: &State<Sender<&'static str>>) {
-    let msg = (num + 1).to_string().as_str();
-    let msg: &'static str = ;
-    let _res = queue.send(msg);
+    let msg = (num + 1).to_string().into_boxed_str();
+    let _res = queue.send(Box::leak(msg));
 }
 
 #[launch]
 fn rocket() -> _ {
     rocket::build()
+        .manage(channel::<&'static str>(1024).0)
         .mount("/", routes![add, count])
         .mount("/", FileServer::from("public/"))
 }
