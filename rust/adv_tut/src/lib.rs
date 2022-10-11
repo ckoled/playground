@@ -54,6 +54,18 @@ impl Rectangle {
   }
 }
 
+pub fn highest_divisor(n: u32) -> u32 {
+  let n_sqrt = (n as f32).sqrt().floor() as u32;
+  for i in (1..=((n as f32/2.).floor() as u32)).rev() {
+    for j in 1..n_sqrt {
+      if i*j == n {
+        return i;
+      }
+    }
+  }
+  return 0;
+}
+
 #[cfg(test)]
 mod tests {
   use super::*;
