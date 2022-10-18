@@ -46,8 +46,9 @@ public class DetectText {
 
         // For full list of available annotations, see http://g.co/cloud/vision/docs
         for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
+          // First one is full text
           System.out.format("Text: %s%n", annotation.getDescription());
-          System.out.format("Position : %s%n", annotation.getBoundingPoly());
+          // System.out.format("Position : %s%n", annotation.getBoundingPoly());
         }
       }
     }
