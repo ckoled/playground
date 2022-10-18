@@ -7,4 +7,6 @@
     "rust/adv_tut/Cargo.toml",
     "rust/first_app/Cargo.toml",
   ],
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "gradle.nestedProjects": true
 }
