@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jaras\\ckoled\\dev\\playground\\csharp\\Overview\\HelloWorld\\HelloWorld.csproj",
+      "projectUniqueName": "c:\\Users\\jaras\\ckoled\\dev\\playground\\csharp\\Overview\\HelloWorld\\HelloWorld.csproj",
       "projectName": "HelloWorld",
-      "projectPath": "C:\\Users\\jaras\\ckoled\\dev\\playground\\csharp\\Overview\\HelloWorld\\HelloWorld.csproj",
+      "projectPath": "c:\\Users\\jaras\\ckoled\\dev\\playground\\csharp\\Overview\\HelloWorld\\HelloWorld.csproj",
       "packagesPath": "C:\\Users\\jaras\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jaras\\ckoled\\dev\\playground\\csharp\\Overview\\HelloWorld\\obj\\",
+      "outputPath": "c:\\Users\\jaras\\ckoled\\dev\\playground\\csharp\\Overview\\HelloWorld\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jaras\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -25,6 +25,9 @@
       "originalTargetFrameworks": [
         "net7.0"
       ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",

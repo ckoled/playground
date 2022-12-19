@@ -17,7 +17,9 @@ namespace ForLoops
 
             // TODO: the foreach-in loop can be used to iterate over sequences
             // Console.WriteLine("The foreach loop:");
-
+            foreach (int i in nums) {
+                Console.WriteLine("{0}", i);
+            }
 
             // TODO: count the number of o's in the string
 

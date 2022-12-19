@@ -26,16 +26,16 @@ namespace Operators
 
 
             // null-coalescing operators
-            // string str = null;
+            string str = null;
             // TODO: the ?? operator uses left operand if not null, or right one if it is
-
+            
             
             // TODO: the ??= operator assigns the right operand if the left one is null
             // it replaces the code:
             // if (variable is null) {
             //    variable = somevalue;
             // }
-
+            str ??= "New String";
         }
     }
 }

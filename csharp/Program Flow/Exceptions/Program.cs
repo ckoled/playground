@@ -11,8 +11,19 @@ namespace Exceptions
             int result;
 
             // TODO: try-catch expressions make error checking easier
-            result = x / y;
-            Console.WriteLine("The result is: {0}", result);
+            try
+            {
+                result = x / y;
+                if (x>1000) throw new ArgumentOutOfRangeException("x", "x must be less than 1000");
+                Console.WriteLine("The result is: {0}", result);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally {
+                Console.WriteLine("done");
+            }
         }
     }
 }

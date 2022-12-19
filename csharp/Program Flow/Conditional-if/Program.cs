@@ -15,14 +15,15 @@ namespace Conditionals
             // TODO: Using the ternary operator ?:
 
             // a two-case if-then
-            /*
             if (theVal < 50) {
                 Console.WriteLine("theVal is small");
+            }
+            else if (theVal < 5) {
+                Console.WriteLine("theVal is very small");
             }
             else {
                 Console.WriteLine("theVal is large");
             }
-            */
 
             // TODO: can be replaced by a ternary operator ?:
 
