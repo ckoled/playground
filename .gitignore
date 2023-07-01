@@ -2,6 +2,7 @@
 *.pdb
 *.log
 *.csv
+.env
 
 target/
 
