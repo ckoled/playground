@@ -4,8 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-sodapy = "*"
-pandas = "*"
+python-dotenv = "*"
+openai = "*"
+elevenlabs = "*"
+pyaudio = "*"
+speechrecognition = "*"
+numpy = "*"
+obs-websocket-py = "*"
+pydantic = "==1.10"
 
 [dev-packages]
 
